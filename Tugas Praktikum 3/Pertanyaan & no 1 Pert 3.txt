@@ -1,0 +1,24 @@
+Nama : Febrianti Pujiatiningsih
+NIM  : 24060123120034
+Lab  : GKV B1
+
+# PRAKTIKUM 3
+-- Pertanyaan --
+1. Apakah fungsi glutReshapeFunc dan glutPostRedisplay? Jelaskan!
+- glutReshapeFunc(reshape): Fungsi ini digunakan untuk menangani perubahan ukuran jendela. Ketika ukuran jendela berubah, fungsi reshape() akan dipanggil secara otomatis untuk mengatur ulang viewport, proyeksi, dan aspek rasio, sehingga objek tetap terlihat proporsional.
+- glutPostRedisplay(): Fungsi ini memberi sinyal ke GLUT bahwa tampilan perlu diperbarui. Setelah suatu aksi dilakukan (misalnya, menekan tombol untuk menggerakkan objek), glutPostRedisplay() memanggil ulang fungsi display(), sehingga perubahan dapat terlihat pada layar.
+
+2. Apa tugas prosedur Idle pada kode untuk kubus bergerak?
+Prosedur Idle() bertanggung jawab untuk memperbarui nilai rotasi kubus dalam setiap frame. Setiap kali Idle() dipanggil, nilai sudut rotasi xRotated, yRotated, dan zRotated ditambah dengan nilai tertentu, sehingga kubus tampak terus berputar secara otomatis. Setelah perubahan dilakukan, display() dipanggil ulang untuk menampilkan animasi pergerakan kubus.
+
+3. Jelaskan secara sederhana yang dimaksud dengan proyeksi, GL_PROJECTION, dan GL_MODELVIEW!
+- Proyeksi adalah proses mengubah objek 3D ke dalam tampilan 2D pada layar.
+- GL_PROJECTION digunakan untuk mengatur bagaimana objek 3D ditampilkan di layar. OpenGL mendukung proyeksi perspektif (objek yang lebih jauh terlihat lebih kecil) dan proyeksi ortogonal (objek tetap berukuran sama tanpa efek perspektif).
+- GL_MODELVIEW digunakan untuk mengatur transformasi objek, seperti translasi, rotasi, dan skala, sebelum diproyeksikan ke layar.
+
+
+-- Tugas --
+1. Jelaskan bagaimana cara kerja kode lengan di atas!
+   Kode "Lengan Bergerak" menggunakan OpenGL dengan GLUT untuk mensimulasikan pergerakan lengan robot sederhana. Model ini terdiri dari dua bagian utama, yaitu lengan atas dan lengan bawah, yang dapat berotasi pada titik bahu dan siku menggunakan transformasi glRotatef(). Fungsi display() bertanggung jawab untuk menggambar lengan dengan dua segmen berbentuk kubus menggunakan glutWireCube(), serta mengaplikasikan transformasi translasi dan rotasi untuk menyesuaikan posisi dan pergerakan. Proyeksi perspektif diatur melalui reshape() untuk memastikan tampilan tetap proporsional saat jendela berubah ukuran. Kontrol gerakan lengan dilakukan melalui fungsi keyboard(), yang memungkinkan pengguna memutar bahu (s/S) dan siku (e/E). Program ini menggunakan glutMainLoop() untuk menjalankan loop utama, memastikan tampilan diperbarui secara real-time saat menerima input dari pengguna.
+
+no 2 dan 3 terdapat pada folder Tangan bergerak
